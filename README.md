@@ -9,4 +9,5 @@ The primary purpose of this script is model training and checkpoint generation o
 To use the trained model for inference and visualization, please refer to Model_demo.py, which demonstrates how to load the saved checkpoint, apply the same normalization, and visualize predicted images from new or test displacement inputs.
 
 Here is an example of y_true (an original Mechanical MNIST number) and y_pred (predicted from displacement fields)
+
 ![Demo](images/predicted.png)
