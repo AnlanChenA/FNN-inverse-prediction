@@ -1,5 +1,7 @@
 # FNN-inverse-prediction
 FNN model for mechanical MNIST inverse prediction
+
+This project is a reproduction of the original research presented in https://doi.org/10.1016/j.eml.2020.100659
 # Core Functionality
 
 MNIST_inverse.py trains a fully connected neural network (FNN) to learn the inverse mapping from FEA displacement fields to MNIST-like 28×28 images and saves a trained model checkpoint for later use. The input consists of concatenated x- and y-displacement features, which are separately normalized using training-set statistics before being fed into the network. The model is trained using mean absolute error (MAE) loss, and the best-performing weights on the test set are retained.
