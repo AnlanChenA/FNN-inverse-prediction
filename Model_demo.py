@@ -3,12 +3,10 @@ import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
 
-
-
 # ---------Model definition
 
 def build_model():
-    """FNN architecture (must match training script)."""
+    """FNN architecture (match training script)."""
     return nn.Sequential(
         nn.Linear(784 * 2, 2048),
         nn.ReLU(),
@@ -34,8 +32,6 @@ def load_checkpoint(ckpt_path):
     }
 
     return model, norm
-
-
 
 # --------Load and normalize data
 
