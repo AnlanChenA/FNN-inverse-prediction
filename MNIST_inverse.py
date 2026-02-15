@@ -77,11 +77,9 @@ def train_model(model, X_train, y_train, X_test, y_test):
     batch_size = 256  # size of each batch
     batch_start = torch.arange(0, len(X_train), batch_size)
 
-    best_mse = np.inf   # init to infinity
+    best_mae = np.inf   # init to infinity
     best_weights = None
     history = []
-
-    loss_fn(y_test[1], y_test[2])
 
     ##-------train
     for epoch in range(n_epochs):
@@ -105,7 +103,7 @@ def train_model(model, X_train, y_train, X_test, y_test):
                 optimizer.step()
 
                 # print progress
-                bar.set_postfix(mse=float(loss))
+                bar.set_postfix(mae=float(loss))
 
         # evaluate accuracy at end of each epoch
         model.eval()
@@ -114,8 +112,8 @@ def train_model(model, X_train, y_train, X_test, y_test):
         mae = float(mae)
         history.append(mae)
 
-        if mae < best_mse:
-            best_mse = mae
+        if mae < best_mae:
+            best_mae = mae
             best_weights = copy.deepcopy(model.state_dict())
 
         print(mae)
