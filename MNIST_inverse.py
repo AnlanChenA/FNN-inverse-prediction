@@ -84,7 +84,7 @@ def train_model(model, X_train, y_train, X_test, y_test):
     ##-------train
     for epoch in range(n_epochs):
         model.train()
-        with tqdm.tqdm(batch_start, unit="batch", mininterval=0, disable=True) as bar:
+        with tqdm.tqdm(batch_start, unit="batch", mininterval=0, disable=False) as bar:
             bar.set_description(f"Epoch {epoch}")
             for start in bar:
                 # take a batch
